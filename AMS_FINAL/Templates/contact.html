@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<!-- Contact Section -->
+	<section class="contact-page set-bg" data-setbg="{% static 'img/contact_bg.jpeg' %}">
+		<div class="sp-container">
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="contact-text text-white">
+						<h2>Get in touch</h2>
+						<p>Maecenas facilisis facilisis consequat. Curabitur fringilla pellen-tesque neque, imperdiet efficitur urna gravida vel. Cras augue diam, sollicitudin sit amet felis ut, eleifend faucibus dui. Proin euis-mod suscipit lacus, et scelerisque nisi aliquam a. Nunc feugiat mattis quam, ut luctus enim ultrices at.</p>
+						<ul>
+							<li><h6>Address:</h6>Sankhamul-09, Kathmandu</li>
+							<li><h6>Phone:</h6>+977 01-441258</li>
+							<li><h6>Mail:</h6>@ams_photos.com</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-7 offset-lg-1">
+					<form class="contact-form" method="post" action="" name="booknow"  style="color:black">
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-md-6">
+								<input type="text" placeholder="Your Name" name="name" required>
+							</div>
+							<div class="col-md-6">
+								<input type="text" placeholder="Your Phone Number" name="number" required>
+							</div>
+							<div class="col-md-6">
+								<input type="email" placeholder="Your E-mail" name="email" required>
+							</div>
+							<div class="col-md-6">
+								<input type="date" placeholder="Event date" name="date" required>
+							</div>
+							<div class="col-md-12">
+								<input type="text" placeholder="Event Type" name="event" required>
+								<textarea placeholder="Description" name="description"></textarea>
+								<button class="btn btn-outline-secondary btn-lg" type="submit">Book Now</button>
+								<button name="ViewBooking" class="btn btn-outline-secondary btn-lg"><a href="../contact/dashboard/"
+											 style="color:gray; text-decoration:none; text-color:white">ViewBooking details</a>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Contact Section end -->
+
+{% endblock %}

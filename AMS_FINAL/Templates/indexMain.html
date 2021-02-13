@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+	<!-- portfolio single -->
+    <section class="portfilio-single set-bg" data-setbg="{% static './img/portfolio/big.JPG' %}">
+        <div class="sp-container">
+            <div class="portfolio-single-content text-white">
+                <span>Professional Photographer</span>
+				<h2>Artistic Photos</h2>
+				<p>Maecenas facilisis facilisis consequat. Curabitur fringilla pellentesque neque, imperdiet efficitur urna gravida vel. Cras augue diam, sollicitudin sit amet felis ut, eleifend faucibus dui. Proin euismod suscipit lacus, et scelerisque nisi aliquam a. Nunc feugiat mattis quam, ut luctus enim ultrices at.</p>
+               <p>Fcilisis facilisis consequat. Curabitur fringilla pellentesque neque, imperdiet efficitur urna gravida vel. Cras augue diam, sollicitudin sit amet felis ut, eleifend faucibus dui. Proin euismod suscipit lacus, et scelerisque nisi aliquam a. Nunc feugiat mattis quam, ut luctus enim ultrices ringilla pellenat.</p>
+               {% for i in images %}
+				<ul>
+                   <li><h6>Client:</h6><span>{{i.imagename}}</span></li>
+                   <li><h6>Tag:</h6><span>{{i.category}}</span></li>
+               	</ul>
+			   {% endfor %}
+            </div>
+        </div>
+	</section>
+	<!-- Portfolio single end -->
+
+	<!-- Portfolio slider -->
+    <div class="portfolio-slider-warp">
+
+        <div class="portfolio-slider owl-carousel">
+            <img src="{% static 'img/portfolio-single/1.JPG' %}" alt="">
+            <img src="{% static 'img/portfolio-single/2.JPG' %}" alt="">
+            <img src="{% static 'img/portfolio-single/3.JPG' %}" alt="">
+            <img src="{% static 'img/portfolio-single/4.JPG' %}" alt="">
+			{% for i in images %}
+				<img src="http://127.0.0.1:8000/media/{{ i.image }}" alt="{{ i.imagename }}">
+			{% endfor %}
+        </div>
+        <div class="slide-num-holder" id="snh-1"></div>
+	</div>
+	<!-- Portfolio slider end -->
+ 
+
+	<!-- Banner Section -->
+	<section class="banner-section set-bg" data-setbg="{% static './img/banner_bg.jpg' %}" style="background-attachment: fixed;background-size: cover;background-repeat: no-repeat;">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-9">
+					<h2>Need a photographer? Get in touch</h2>
+				</div>
+				<div class="col-lg-3 text-lg-right text-left">
+					<div class="site-btn"><a href="../contact/"><span>Read More</span></a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Banner Section end -->
+
+{% endblock %}
